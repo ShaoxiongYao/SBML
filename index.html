@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Safe Leaf Manipulation for Accurate Shape and Pose Estimation of Occluded Fruit">
-  <meta name="keywords" content="Agriculture Robots">
+        content="Structured Bayesian Meta-Learning for Data-Efficient Visual-Tactile Model Estimation">
+  <meta name="keywords" content="Tactile sensing">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Safe Leaf Manipulation for Accurate Shape and Pose Estimation of Occluded Fruit</title>
 
@@ -88,44 +88,17 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Safe Leaf Manipulation for Accurate Shape and Pose Estimation of Occluded Fruits</h1>
-          <!-- <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a href="https://keunhong.com">Keunhong Park</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a href="https://utkarshsinha.com">Utkarsh Sinha</a><sup>2</sup>,</span>
-            <span class="author-block">
-              <a href="https://jonbarron.info">Jonathan T. Barron</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="http://sofienbouaziz.com">Sofien Bouaziz</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://www.danbgoldman.com">Dan B Goldman</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://homes.cs.washington.edu/~seitz/">Steven M. Seitz</a><sup>1,2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="http://www.ricardomartinbrualla.com">Ricardo Martin-Brualla</a><sup>2</sup>
-            </span>
-          </div> -->
+          <h1 class="title is-1 publication-title">Structured Bayesian Meta-Learning for Data-Efficient Visual-Tactile Model Estimation</h1>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block">Shaoxiong Yao<sup>∗,1</sup>,</span>
-            <span class="author-block">Sicong Pan<sup>∗,2</sup>,</span>
-            <span class="author-block">Maren Bennewitz<sup>2</sup>,</span>
+            <span class="author-block">Shaoxiong Yao<sup>1</sup>,</span>
+            <span class="author-block">Yifan Zhu<sup>2</sup>,</span>
             <span class="author-block">Kris Hauser<sup>1</sup></span>
           </div>
 
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>University of Illinois at Urbana-Champaign, IL, USA.</span>
-            <span class="author-block"><sup>2</sup>Humanoid Robots Lab, University of Bonn, Germany.</span>
-            <span class="author-block"><sup>∗</sup>These authors contributed equally to this work.</span>
-            <!-- <span class="author-block">S. Yao and K. Hauser are with the University of Illinois at Urbana-Champaign, IL, USA.</span>
-            <span class="author-block">S. Pan and M. Bennewitz are with the Humanoid Robots Lab, University of Bonn, Germany.</span>
-            <span class="author-block">M. Bennewitz and S. Pan are additionally with the Lamarr Institute for Machine Learning and Artificial Intelligence and the Center for Robotics, Bonn, Germany.</span>
-            <span class="author-block">This work has been partially funded by the USDA/NIFA Grant #2020-67021-32799, the DFG grant 459376902 – AID4Crops, under Germany’s Excellence Strategy, EXC-2070 – 390732324 – PhenoRob, and by the BMBF within the Robotics Institute Germany, grant No. 16ME0999.</span> -->
+            <span class="author-block"><sup>2</sup>Yale University, CT, USA.</span>
           </div>
 
           <!-- <div class="is-size-5 publication-authors">
@@ -278,7 +251,7 @@
           <h4 class="title is-6 has-text-centered">Without Scene-Consistency</h4>
           <div class="columns is-centered">
             <div class="column content">
-              <video id="without-ssc-video" controls playsinline width="100%">
+              <video id="without-ssc-video" autoplay controls muted loop playsinline width="100%">
                 <source src="./static/videos/crop_test_obj_100_complete_process_only_surface_loss_x264.mp4"
                         type="video/mp4">
               </video>
@@ -298,7 +271,7 @@
         <div class="column">
           <div class="content">
             <h4 class="title is-6 has-text-centered">Low Energy Action</h4>
-            <video id="ssc-video" autoplay controls muted loop playsinline width="100%">
+            <video id="high-energy-action" autoplay controls muted loop playsinline width="100%">
               <source src="./static/videos/pull_artificial_100_grasp_04_move_04_x264.mp4"
                       type="video/mp4">
             </video>
@@ -309,7 +282,7 @@
           <h4 class="title is-6 has-text-centered">High Energy Action</h4>
           <div class="columns is-centered">
             <div class="column content">
-              <video id="without-ssc-video" controls playsinline width="100%">
+              <video id="low-energy-action" autoplay controls muted loop playsinline width="100%">
                 <source src="./static/videos/pull_artificial_100_grasp_00_move_01_x264.mp4"
                         type="video/mp4">
               </video>
@@ -453,7 +426,7 @@
       <div class="column">
         <div class="content">
           <h4 class="title is-5 has-text-centered">Hazard</h4>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+          <video id="hazard-video" autoplay controls muted loop playsinline height="100%">
             <source src="./static/videos/crop_test_obj_211_100_seq_overlap_heuristic_999_x264.mp4"
                     type="video/mp4">
           </video>
@@ -464,12 +437,11 @@
         <h4 class="title is-5 has-text-centered">Fruit Collision</h4>
         <div class="columns is-centered">
           <div class="column content">
-            <video id="matting-video" controls playsinline height="100%">
+            <video id="fruit-collision-video" autoplay controls muted loop playsinline height="100%">
               <source src="./static/videos/crop_test_obj_220_100_seq_pure_random_collide_fruit_x264.mp4"
                       type="video/mp4">
             </video>
           </div>
-
         </div>
       </div>
 
@@ -477,7 +449,7 @@
         <h4 class="title is-5 has-text-centered">Leaf Damage</h4>
         <div class="columns is-centered">
           <div class="column content">
-            <video id="matting-video" controls playsinline height="100%">
+            <video id="leaf-damage-video" autoplay controls muted loop playsinline height="100%">
               <source src="./static/videos/crop_test_obj_171_100_seq_best_001_x264.mp4"
                       type="video/mp4">
             </video>
