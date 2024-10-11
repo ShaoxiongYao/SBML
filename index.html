@@ -6,7 +6,7 @@
         content="Structured Bayesian Meta-Learning for Data-Efficient Visual-Tactile Model Estimation">
   <meta name="keywords" content="Tactile sensing">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Safe Leaf Manipulation for Accurate Shape and Pose Estimation of Occluded Fruit</title>
+  <title>Structured Bayesian Meta-Learning for Data-Efficient Visual-Tactile Model Estimation</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -32,7 +32,7 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.svg">
+  <link rel="icon" href="./static/images/icon.png">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -72,9 +72,6 @@
           <a class="navbar-item" href="https://motion.cs.illinois.edu/">
             IML UIUC
           </a>
-          <a class="navbar-item" href="https://www.hrl.uni-bonn.de/">
-            HRL Bonn
-          </a>
         </div>
       </div>
     </div>
@@ -109,16 +106,16 @@
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
-              <!-- <span class="link-block">
-                <a href=""
+              <span class="link-block">
+                <a href="https://openreview.net/forum?id=TzqKmIhcwq"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                   </span>
-                  <span>Paper</span>
+                  <span>OpenReview</span>
                 </a>
-              </span> -->
-              <span class="link-block">
+              </span>
+              <!-- <span class="link-block">
                 <a href="https://arxiv.org/abs/2409.17389"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -126,7 +123,7 @@
                   </span>
                   <span>arXiv</span>
                 </a>
-              </span>
+              </span> -->
               <!-- Video Link. -->
               <span class="link-block">
                 <a href=""
@@ -186,9 +183,9 @@
     <div class="hero-body">
       <div class="media-content">
         <figure class="image">
-          <img src="./static/images/star_figure_v3.png" alt="Fruit shape and pose estimation with leaf manipulation">
+          <img src="./static/images/star_figure.png" alt="Method overview">
           <figcaption class="subtitle has-text-centered">
-            We propose an active fruit shape and pose estimation method that physically manipulates occluding leaves to reveal hidden fruits.            
+            Our SBML approach enables few-shot learning of a novel plant's force response using experience interacting with other plants.            
           </figcaption>
         </figure>
       </div>
@@ -204,11 +201,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Fruit monitoring plays an important role in crop management, and rising global fruit consumption combined with labor shortages necessitates automated monitoring with robots.
-            However, occlusions from plant foliage often hinder accurate shape and pose estimation. 
-            Therefore, we propose an active fruit shape and pose estimation method that physically manipulates occluding leaves to reveal hidden fruits.  
-            This paper introduces a framework that plans robot actions to maximize visibility and minimize leaf damage. We developed a novel scene-consistent shape completion technique to improve fruit estimation under heavy occlusion and utilize a perception-driven deformation graph model to predict leaf deformation during planning.
-            Experiments on artificial and real sweet pepper plants demonstrate that our method enables robots to safely move leaves aside, exposing fruits for accurate shape and pose estimation, outperforming baseline methods.
+            Estimating visual-tactile models of deformable objects is challenging because vision suffers from occlusion while touch data is sparse and noisy.  We propose a novel data-efficient method for dense heterogeneous model estimation by leveraging experience from diverse training objects.  The method is based on Bayesian meta-learning (BML), which can mitigate overfitting high-capacity visual-tactile models by meta-learning an informed prior and naturally achieves few-shot online estimation via posterior estimation.  However, BML requires a shared parametric model across tasks but visual-tactile models for diverse objects have different parameter spaces.  To address this issue, this paper introduces Structured Bayesian Meta-Learning (SBML) that incorporates heterogeneous physics models, enabling learning from training objects with varying appearances and geometries.  SBML performs zero-shot vision-only prediction of deformable model parameters, as well as few-shot adaptation after a handful of touches.  Experiments show that in two classes of heterogeneous objects, namely plants and shoes, SBML outperforms existing approaches in force and torque prediction accuracy in zero- and few-shot settings. 
           </p>
         </div>
       </div>
@@ -221,10 +214,9 @@
         <h2 class="title is-3">Method</h2>
         <div class="media-content">
           <figure class="image">
-            <img src="./static/images/overview_figure_v5.png" alt="Method overview">
+            <img src="./static/images/method_overview_wide.png" alt="Method overview">
             <figcaption class="subtitle has-text-centered">
-              Overview of the proposed active fruit shape and pose estimation system for plant-safe occlusion removal. 
-              Our system plans robot action that maximizes fruit visibility and minimizes plant damage risk.
+              An overview of the structured Bayesian meta-learning method.  Our framework enables learning visual-tactile prior from diverse offline objects and data-efficient online estimation.
             </figcaption>
           </figure>
         </div>
@@ -233,7 +225,7 @@
     <!--/ Method. -->
 
     <!-- Shape completion visualization. -->
-    <div class="columns is-centered has-text-centered" style="width: 100%; margin: 0 auto; justify-content: center;">
+    <!-- <div class="columns is-centered has-text-centered" style="width: 100%; margin: 0 auto; justify-content: center;">
       <div class="column is-four-fifths">
         <h2 class="title is-4">Shape Completion Visualization</h2>
         <div class="columns is-centered">
@@ -260,11 +252,11 @@
         </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <!--/ Shape completion visualization. -->
 
     <!-- Leaf deformation visualization. -->
-    <div class="columns is-centered has-text-centered" style="width: 100%; margin: 0 auto; justify-content: center;">
+    <!-- <div class="columns is-centered has-text-centered" style="width: 100%; margin: 0 auto; justify-content: center;">
       <div class="column is-four-fifths">
         <h2 class="title is-4">Leaf Deformation Visualization</h2>
         <div class="columns is-centered">
@@ -291,11 +283,11 @@
         </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <!--/ Shape completion visualization. -->
 
     <!-- Results. -->
-    <div class="columns is-centered has-text-centered" style="width: 100%; margin: 0 auto; justify-content: center;">
+    <!-- <div class="columns is-centered has-text-centered" style="width: 100%; margin: 0 auto; justify-content: center;">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Results</h2>
         <div class="content has-text-justified">
@@ -307,7 +299,7 @@
           </p>
         </div>
       </div>
-    </div>
+    </div> -->
     <!--/ Results. -->
 
     <!-- Paper video. -->
@@ -414,7 +406,7 @@
 </div>
 </section>  -->
 
-<section class="section">
+<!-- <section class="section">
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">Unsafe Actions</h2>
     <div class="content">
@@ -458,9 +450,9 @@
       </div>
     </div>
   </div>
-</section> 
+</section>  -->
 
-<section class="hero teaser">
+<!-- <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
       <h2 class="title is-3 has-text-centered">Multi-fruit scenario</h2>
@@ -474,7 +466,7 @@
       </h2>
     </div>
   </div>
-</section>
+</section> -->
 
 <footer class="footer">
   <div class="container">
