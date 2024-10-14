@@ -1,6 +1,6 @@
 # Structured Bayesian Meta-Learning for Data-Efficient Visual-Tactile Model Estimation
 
-This is the repository that contains source code for the [SBML project](https://shaoxiongyao.github.io/struct-bayes-meta-learn/).
+This is the repository that contains source code for the [SBML project](https://shaoxiongyao.github.io/SBML/).
 
 <!-- If you find Nerfies useful for your work please cite:
 ```
