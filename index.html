@@ -52,23 +52,17 @@
   </div>
   <div class="navbar-menu">
     <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <!-- <a class="navbar-item" href="https://shaoxiongyao.github.io/">
+      <a class="navbar-item" href="https://shaoxiongyao.github.io/">
       <span class="icon">
           <i class="fas fa-home"></i>
       </span>
-      </a> -->
+      </a>
 
       <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link">
           More research
         </a>
         <div class="navbar-dropdown">
-          <!-- <a class="navbar-item" href="https://psc0628.github.io/">
-            Sicong Pan
-          </a>
-          <a class="navbar-item" href="https://nerfies.github.io">
-            Shaoxiong Yao
-          </a> -->
           <a class="navbar-item" href="https://motion.cs.illinois.edu/">
             IML UIUC
           </a>
@@ -85,7 +79,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Structured Bayesian Meta-Learning for Data-Efficient Visual-Tactile Model Estimation</h1>
+          <h1 class="title is-2 publication-title">Structured Bayesian Meta-Learning for Data-Efficient Visual-Tactile Model Estimation</h1>
 
           <div class="is-size-5 publication-authors">
             <span class="author-block">Shaoxiong Yao<sup>1</sup>,</span>
@@ -162,39 +156,74 @@
   </div>
 </section>
 
-<!--First version using multi-fruit video as teasor-->
-<!-- <section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/pull_leaf_multi_fruits_speedup.mp4"
-                type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        We propose an active fruit shape and pose estimation method that physically manipulates 
-        occluding leaves to reveal hidden fruits. Video in 6x speed.
-      </h2>
-    </div>
-  </div>
-</section> -->
-
-<section class="hero teaser" style="width: 40%; margin: 0 auto;">
+<!-- <section class="hero teaser" style="width: 40%; margin: 0 auto;">
   <div class="container is-max-desktop">
     <div class="hero-body">
       <div class="media-content">
         <figure class="image">
           <img src="./static/images/star_figure.png" alt="Method overview">
           <figcaption class="subtitle has-text-centered">
-            Our SBML approach enables few-shot learning of a novel plant's force response using experience interacting with other plants.            
+            We enable data-efficient visual-tactile model estimation by learning visual-tactile model prior             
           </figcaption>
         </figure>
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 <section class="section" style="width: 100%; margin: 0 auto;">
   <div class="container is-max-desktop">
+    <!-- TL;DR. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-5">TL;DR: We enable data-efficient visual-tactile model estimation by learning a prior of visual-tactile model from diverse real world objects.</h2>
+      </div>
+    </div>
+    <!--/ TL;DR. -->
+
+    <section class="hero teaser">
+      <div class="container is-max-desktop">
+        <div class="hero-body">
+          <h2 class="title is-3 has-text-centered">Offline visual-tactile dataset collection</h2>
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/videos/offline_visual_tactile_dataset.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            Here we show the robot touching several artificial plants. 
+            We collect RGBD video streams and corresponding joint torque sensor readings.
+          </h2>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero teaser">
+      <div class="container is-max-desktop">
+        <div class="hero-body">
+          <h2 class="title is-3 has-text-centered">Zero-shot prediction from vision</h2>
+          <img src="./static/images/large_orange_tree_zero_shot.png" alt="Zero-shot prediction" width="100%">
+          <h2 class="subtitle has-text-centered">
+            Given a novel object, we use the prior learned offline to predict stiffness from appearance alone. Here, the branch region is predicted to be stiffer than the leaf region, aligning with our intuition. 
+          </h2>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero teaser">
+      <div class="container is-max-desktop">
+        <div class="hero-body">
+          <h2 class="title is-3 has-text-centered">Few-shot adaption using touch</h2>
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/videos/large_orange_tree_few_shot.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            Once the robot begins touching the plant, we enable efficient stiffness map update using touch data.
+          </h2>
+        </div>
+      </div>
+    </section>
+
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -223,37 +252,6 @@
       </div>
     </div>
     <!--/ Method. -->
-
-    <!-- Shape completion visualization. -->
-    <!-- <div class="columns is-centered has-text-centered" style="width: 100%; margin: 0 auto; justify-content: center;">
-      <div class="column is-four-fifths">
-        <h2 class="title is-4">Shape Completion Visualization</h2>
-        <div class="columns is-centered">
-        <div class="column">
-          <div class="content">
-            <h4 class="title is-6 has-text-centered">Proposed</h4>
-            <video id="ssc-video" autoplay controls muted loop playsinline width="100%">
-              <source src="./static/videos/crop_test_obj_100_complete_process_full_loss_x264.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-        </div>
-  
-        <div class="column">
-          <h4 class="title is-6 has-text-centered">Without Scene-Consistency</h4>
-          <div class="columns is-centered">
-            <div class="column content">
-              <video id="without-ssc-video" autoplay controls muted loop playsinline width="100%">
-                <source src="./static/videos/crop_test_obj_100_complete_process_only_surface_loss_x264.mp4"
-                        type="video/mp4">
-              </video>
-            </div>
-          </div>
-        </div>
-        </div>
-      </div>
-    </div> -->
-    <!--/ Shape completion visualization. -->
 
     <!-- Leaf deformation visualization. -->
     <!-- <div class="columns is-centered has-text-centered" style="width: 100%; margin: 0 auto; justify-content: center;">
@@ -316,121 +314,35 @@
   </div>
 </section>
 
-<!-- <section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/steve.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/chair-tp.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/shiba.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/fullbody.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/blueshirt.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-mask">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/mask.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-coffee">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/coffee.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-toby">
-          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/toby2.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
 
-<!-- <section class="hero teaser">
+<section class="section">
   <div class="container is-max-desktop">
-    <div class="hero-body" >
-      <h2 class="title is-3 has-text-centered">Unsafe actions</h2>
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/crop_test_obj_171_100_seq_best_001_x264.mp4"
-                type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">Hazard</h2>
-    </div>
-  </div>
-</section> -->
-
-<!-- <section class="hero teaser">
-<div class="container is-max-desktop" style="flex-wrap: nowrap;">
-  <div style="flex-basis: 30%; flex-grow: 0; box-sizing: border-box; flex-wrap: nowrap;">
-    <video controls autoplay muted loop style="width: 30%;">
-      <source src="./static/videos/crop_test_obj_211_100_seq_overlap_heuristic_999_x264.mp4" type="video/mp4">
-    </video>
-  </div>
-  <div style="flex-basis: 30%; flex-grow: 0; box-sizing: border-box; flex-wrap: nowrap;">
-    <video controls autoplay muted loop style="width: 30%;">
-      <source src="./static/videos/crop_test_obj_220_100_seq_pure_random_collide_fruit_x264.mp4" type="video/mp4">
-    </video>
-  </div>
-  <div style="flex-basis: 30%; flex-grow: 0; box-sizing: border-box; flex-wrap: nowrap;">
-    <video controls autoplay muted loop style="width: 30%;">
-      <source src="./static/videos/crop_test_obj_171_100_seq_best_001_x264.mp4" type="video/mp4">
-    </video>
-  </div>
-</div>
-</section>  -->
-
-<!-- <section class="section">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered">Unsafe Actions</h2>
+    <h2 class="title is-3 has-text-centered">Unified prior over plants and shoes</h2>
     <div class="content">
-      <h4 class="title is-6 has-text-centered">Here we illustrates three types of unsafe actions.</h4>        
+      <h4 class="title is-6 has-text-centered">Our method can learn a high-capacity prior across multiple object categories. Here we show the unified prior mean prediction trained using both plant and shoe broad datasets. 
+      </h4>        
     </div>
     
     <div class="columns is-centered">
 
       <div class="column">
         <div class="content">
-          <h4 class="title is-5 has-text-centered">Hazard</h4>
+          <h4 class="title is-5 has-text-centered">Dracaena</h4>
+          <img src="./static/images/plant_cross_category_test_0_dracaena_vert_angle00_vis_pcd.png" alt="Dracaena Visualization" width="100%">
           <video id="hazard-video" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/crop_test_obj_211_100_seq_overlap_heuristic_999_x264.mp4"
+            <source src="./static/videos/plant_cross_category_test_0_supp_size_0_mu_view.mp4"
                     type="video/mp4">
           </video>
         </div>
       </div>
 
       <div class="column">
-        <h4 class="title is-5 has-text-centered">Fruit Collision</h4>
+        <h4 class="title is-5 has-text-centered">Orange tree</h4>
+        <img src="./static/images/plant_cross_category_test_1_large_orange_tree_angle00_vis_pcd.png" alt="Dracaena Visualization" width="100%">
         <div class="columns is-centered">
           <div class="column content">
             <video id="fruit-collision-video" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/crop_test_obj_220_100_seq_pure_random_collide_fruit_x264.mp4"
+              <source src="./static/videos/plant_cross_category_test_1_supp_size_0_mu_view.mp4"
                       type="video/mp4">
             </video>
           </div>
@@ -438,11 +350,38 @@
       </div>
 
       <div class="column">
-        <h4 class="title is-5 has-text-centered">Leaf Damage</h4>
+        <h4 class="title is-5 has-text-centered">Leather boot</h4>
+        <img src="./static/images/shoe_cross_category_0_brown_columbia_angle00_vis_pcd.png" alt="Dracaena Visualization" width="100%">
         <div class="columns is-centered">
           <div class="column content">
             <video id="leaf-damage-video" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/crop_test_obj_171_100_seq_best_001_x264.mp4"
+              <source src="./static/videos/shoe_cross_category_0_supp_size_0_mu_view.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <h4 class="title is-5 has-text-centered">Sneaker</h4>
+        <img src="./static/images/shoe_cross_category_1_gray_swiss_shoe_angle00_vis_pcd.png" alt="Dracaena Visualization" width="100%">
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="leaf-damage-video" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/shoe_cross_category_1_supp_size_0_mu_view.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <h4 class="title is-5 has-text-centered">Running shoe</h4>
+        <img src="./static/images/shoe_cross_category_2_white_nike_angle00_vis_pcd.png" alt="Dracaena Visualization" width="100%">
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="leaf-damage-video" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/shoe_cross_category_2_supp_size_0_mu_view.mp4"
                       type="video/mp4">
             </video>
           </div>
@@ -450,7 +389,8 @@
       </div>
     </div>
   </div>
-</section>  -->
+</section> 
+
 
 <!-- <section class="hero teaser">
   <div class="container is-max-desktop">
@@ -488,11 +428,7 @@
             Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
           <p>
-            This means you are free to borrow the <a
-              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
-            we just ask that you link back to this page in the footer.
-            Please remember to remove the analytics code included in the header of the website which
-            you do not want on your website.
+            We appreciate the website template from <a href="https://github.com/nerfies/nerfies.github.io">nerfies</a>.
           </p>
         </div>
       </div>
