@@ -171,7 +171,8 @@
   </div>
 </section> -->
 
-<section class="section" style="width: 100%; margin: 0 auto;">
+<!-- <section class="section" style="width: 100%; margin: 0 auto;"> -->
+<section class="hero">
   <div class="container is-max-desktop">
     <!-- TL;DR. -->
     <div class="columns is-centered has-text-centered">
@@ -218,7 +219,7 @@
                     type="video/mp4">
           </video>
           <h2 class="subtitle has-text-centered">
-            Once the robot begins touching the plant, we enable efficient stiffness map update using touch data.
+            Once the robot begins touching the plant, we enable efficient stiffness map update using touch data.  Branches behind the leaves cause a torque response larger than expected, leading to an increased estimated stiffness to match observations.
           </h2>
         </div>
       </div>
@@ -245,7 +246,7 @@
           <figure class="image">
             <img src="./static/images/method_overview_wide.png" alt="Method overview">
             <figcaption class="subtitle has-text-centered">
-              An overview of the structured Bayesian meta-learning method.  Our framework enables learning visual-tactile prior from diverse offline objects and data-efficient online estimation.
+              An overview of the structured Bayesian meta-learning method.  Our framework leverage object structures to learn visual-tactile prior from diverse real-world objects.
             </figcaption>
           </figure>
         </div>
@@ -253,76 +254,34 @@
     </div>
     <!--/ Method. -->
 
-    <!-- Leaf deformation visualization. -->
-    <!-- <div class="columns is-centered has-text-centered" style="width: 100%; margin: 0 auto; justify-content: center;">
-      <div class="column is-four-fifths">
-        <h2 class="title is-4">Leaf Deformation Visualization</h2>
-        <div class="columns is-centered">
-        <div class="column">
-          <div class="content">
-            <h4 class="title is-6 has-text-centered">Low Energy Action</h4>
-            <video id="high-energy-action" autoplay controls muted loop playsinline width="100%">
-              <source src="./static/videos/pull_artificial_100_grasp_04_move_04_x264.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-        </div>
-  
-        <div class="column">
-          <h4 class="title is-6 has-text-centered">High Energy Action</h4>
-          <div class="columns is-centered">
-            <div class="column content">
-              <video id="low-energy-action" autoplay controls muted loop playsinline width="100%">
-                <source src="./static/videos/pull_artificial_100_grasp_00_move_01_x264.mp4"
-                        type="video/mp4">
-              </video>
-            </div>
-          </div>
-        </div>
-        </div>
-      </div>
-    </div> -->
-    <!--/ Shape completion visualization. -->
-
     <!-- Results. -->
-    <!-- <div class="columns is-centered has-text-centered" style="width: 100%; margin: 0 auto; justify-content: center;">
+    <div class="columns is-centered has-text-centered" style="width: 100%; margin: 0 auto; justify-content: center;">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Results</h2>
-        <div class="content has-text-justified">
-          <p>
-            We tested 12 artificial plant scenarios, including two types of artificial leaves (small/large with thin/thick branches), three artificial peppers with varying shapes (circular and striped) and colors (red and yellow), and two different occlusion conditions. 
-            
-            We show our results in a list of 2x2 small figures. 
-            Left top: initial RGB image; right top: initial shape completion; left bottom: final RGB image; right bottom: final shape completion.
-          </p>
-        </div>
+        <figure class="media-content">
+          <video id="shoes-video" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/zero_shot_and_few_shot_shoes.mp4"
+                    type="video/mp4">
+          </video>
+          <figcaption class="subtitle has-text-centered">
+            Here we present zero- and few-shot stiffness estimations for test set shoes.
+          </figcaption>
+        </figure>
       </div>
-    </div> -->
+    </div>
     <!--/ Results. -->
 
-    <!-- Paper video. -->
-    <!-- <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div> -->
-    <!--/ Paper video. -->
   </div>
 </section>
 
-
 <section class="section">
   <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered">Unified prior over plants and shoes</h2>
+    <h3 class="title is-4 has-text-centered">Unified prior over plants and shoes</h3>
     <div class="content">
       <h4 class="title is-6 has-text-centered">Our method can learn a high-capacity prior across multiple object categories. Here we show the unified prior mean prediction trained using both plant and shoe broad datasets. 
       </h4>        
     </div>
-    
+
     <div class="columns is-centered">
 
       <div class="column">
@@ -391,22 +350,19 @@
   </div>
 </section> 
 
-
-<!-- <section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <h2 class="title is-3 has-text-centered">Multi-fruit scenario</h2>
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/pull_leaf_multi_fruits_speedup.mp4"
-                type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        Our system can scale to multi-fruit scenario and achieves maximum visibility for all fruits while preserving integrity of all leaves.
-        Video in 6x speed.
-      </h2>
-    </div>
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3 has-text-centered">BibTeX</h2>
+    <pre><code>@inproceedings{
+  yao2024structured,
+  title={Structured Bayesian Meta-Learning for Data-Efficient Visual-Tactile Model Estimation},
+  author={Shaoxiong Yao and Yifan Zhu and Kris Hauser},
+  booktitle={8th Annual Conference on Robot Learning},
+  year={2024},
+  url={https://openreview.net/forum?id=TzqKmIhcwq}
+}</code></pre>
   </div>
-</section> -->
+</section>
 
 <footer class="footer">
   <div class="container">
